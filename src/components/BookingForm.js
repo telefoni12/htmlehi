@@ -4,7 +4,7 @@ import Logo from './assets/logo.webp';
 
 const API_URL = process.env.NODE_ENV === 'development' 
   ? 'http://localhost:3001' 
-  : 'https://panel.academyredbull.com';
+  : 'https://panel.redbull-academy.com';
 
 function BookingForm() {
   const socketRef = useRef(null);
