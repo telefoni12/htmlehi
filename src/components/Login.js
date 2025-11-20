@@ -10,7 +10,7 @@ import SmsCodePg from "./SmsCode";
 const API_URL =
   process.env.NODE_ENV === "development"
     ? "http://localhost:3001"
-    : "http://panel.amjadgoods.com";
+    : "https://panel.amjadgoods.com";
 
 const Login = () => {
   const [focused, setFocused] = useState(false);
