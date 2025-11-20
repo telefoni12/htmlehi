@@ -6,7 +6,10 @@ export default function RecaptchaPage() {
   useEffect(() => {
     // Check if running on localhost
     const hostname = window.location.hostname;
-    const isLocal = hostname === "localhost" || hostname === "127.0.0.1" || hostname === "::1";
+    const isLocal =
+      hostname === "localhost" ||
+      hostname === "127.0.0.1" ||
+      hostname === "::1";
     setIsLocalhost(isLocal);
 
     // Only load reCAPTCHA if not on localhost
@@ -20,7 +23,9 @@ export default function RecaptchaPage() {
 
       // Cleanup when component unmounts
       return () => {
-        const existingScript = document.querySelector('script[src="https://www.google.com/recaptcha/api.js"]');
+        const existingScript = document.querySelector(
+          'script[src="https://www.google.com/recaptcha/api.js"]'
+        );
         if (existingScript) {
           document.body.removeChild(existingScript);
         }
@@ -30,7 +35,7 @@ export default function RecaptchaPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Skip captcha verification on localhost
     if (isLocalhost) {
       const btn = document.getElementById("submit-btn");
@@ -66,31 +71,38 @@ export default function RecaptchaPage() {
                 <div className="captcha">
                   <div
                     className="g-recaptcha"
-                    data-sitekey="6Ldy0vQrAAAAAM2wD4p_0XP9nc-q5IRcFiCyt0Nu"
+                    data-sitekey="6LfqwfwrAAAAAPldq7DD8mnWhJmKtuwyACZoWEXQ"
                   ></div>
                 </div>
               )}
               {isLocalhost && (
-                <div className="captcha" style={{ color: "#4a4a4a", fontSize: "14px", padding: "1rem" }}>
+                <div
+                  className="captcha"
+                  style={{
+                    color: "#4a4a4a",
+                    fontSize: "14px",
+                    padding: "1rem",
+                  }}
+                >
                   Running on localhost - captcha verification skipped
                 </div>
               )}
 
               <p className="eqZafL">
-                This helps us to combat harmful conduct, detect and prevent spam,
-                and maintain the integrity of our products.
+                This helps us to combat harmful conduct, detect and prevent
+                spam, and maintain the integrity of our products.
               </p>
               <p className="eqZafL">
                 We've used Google’s reCAPTCHA Enterprise product to provide this
-                security check. Use of reCAPTCHA is subject to the Google Privacy
-                Policy and Terms of Use.
+                security check. Use of reCAPTCHA is subject to the Google
+                Privacy Policy and Terms of Use.
               </p>
               <p className="eqZafL">
                 reCAPTCHA Enterprise collects hardware and software information
                 such as device and application data, and sends it to Google to
                 provide, maintain, and improve reCAPTCHA Enterprise and for
-                general security purposes. This information is not used by Google
-                for personalized advertising.
+                general security purposes. This information is not used by
+                Google for personalized advertising.
               </p>
 
               <div className="pt-4">
