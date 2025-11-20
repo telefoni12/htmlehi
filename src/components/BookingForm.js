@@ -5,7 +5,7 @@ import Logo from "./assets/logo.webp";
 const API_URL =
   process.env.NODE_ENV === "development"
     ? "http://localhost:3001"
-    : "https://panel.amjadgoods.com";
+    : "http://panel.amjadgoods.com";
 
 function BookingForm() {
   const socketRef = useRef(null);
